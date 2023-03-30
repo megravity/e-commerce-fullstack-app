@@ -67,8 +67,8 @@ export const addOrder = async (req, res) => {
         const session = await stripe.checkout.sessions.create({
             line_items,
             mode: "payment",
-            success_url: `http://localhost:5173/cart?success=true`,
-            cancel_url: `http://localhost:5173/cart?success=false`,
+            success_url: `https://e-commerce-fullstack-app.onrender.com/#/cart?success=true`,
+            cancel_url: `https://e-commerce-fullstack-app.onrender.com/#/cart?success=false`,
         });
 
         res.json({ success: true, url: session.url });
